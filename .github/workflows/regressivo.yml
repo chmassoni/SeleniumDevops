@@ -24,14 +24,11 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome*.deb
 
-      - name: Check Chrome --version
-        run: google-chrome --version
-
       - name: Setup Chrome and ChromeDriver
       - uses: nanasess/setup-chromedriver@v2
         with:
           chromeapp: google-chrome-stable
-      - run:  |
+        run:  |
           export DISPLAY=:99
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
           chromedriver --url-base=/wd/hub &
