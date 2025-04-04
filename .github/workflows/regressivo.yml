@@ -27,7 +27,6 @@ jobs:
       - name: Check Chrome --version
         run: google-chrome --version
 
-      - uses: actions/setup-chromedriver@v2
       - uses: nanasess/setup-chromedriver@v2
       - run:  |
           export DISPLAY=:99
