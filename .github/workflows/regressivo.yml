@@ -9,7 +9,7 @@ jobs:
     runs-on:  ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Instalar Java 8
         uses: actions/setup-java@v2
@@ -27,12 +27,11 @@ jobs:
       - name: Check Chrome --version
         run: google-chrome --version
 
-      - uses: actions/checkout@v4
-
       - name: Setup Chrome and ChromeDriver
       - uses: nanasess/setup-chromedriver@v2
         with:
           chromeapp: google-chrome-stable
+
       - run:  |
           export DISPLAY=:99
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
