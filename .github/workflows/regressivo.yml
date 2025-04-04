@@ -29,8 +29,7 @@ jobs:
 
       - uses: nanasess/setup-chromedriver@v2
         with:
-          chromedriver-version: '88.0.4324.96'
-          chromeapp: chrome
+          chromeapp: google-chrome-stable
       - run:  |
           export DISPLAY=:99
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
