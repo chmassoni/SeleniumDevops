@@ -28,6 +28,7 @@ jobs:
         run: google-chrome --version
 
       - uses: actions/setup-chromedriver@v2
+      - uses: nanasess/setup-chromedriver@v2
         with:
           version: latest
 
