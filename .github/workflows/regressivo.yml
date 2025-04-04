@@ -27,6 +27,9 @@ jobs:
       - name: Check Chrome --version
         run: google-chrome --version
 
+      - uses: actions/checkout@v4
+
+      - name: Setup Chrome and ChromeDriver
       - uses: nanasess/setup-chromedriver@v2
         with:
           chromeapp: google-chrome-stable
