@@ -26,7 +26,7 @@ jobs:
       - name: Setup Chrome and ChromeDriver
         uses: nanasess/setup-chromedriver@v2
         with:
-          chromeapp: google-chrome-stable
+          chrome-version: latest
 
       - name: Start ChromeDriver
         run:  |
