@@ -18,7 +18,7 @@
     @login-invalido
     Esquema do Cenário: Validar: <name>
       #Quando preencho login "<user>" e senha "<password>"
-      E clico em Login
+      E clico em Login error
       #Então vejo mensagem "<message>" de campo não preenchido
 
       Exemplos:
