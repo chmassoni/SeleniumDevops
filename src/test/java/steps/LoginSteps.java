@@ -3,8 +3,11 @@ package steps;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
+import org.openqa.selenium.By;
 import pages.LoginPage;
 import runner.RunCucumber;
+
+import static support.Commands.checkMessage;
 
 public class LoginSteps extends RunCucumber {
 
@@ -25,6 +28,11 @@ public class LoginSteps extends RunCucumber {
     @Quando("^clico em Login$")
     public void clico_em_Login() {
         //loginPage.clicarLogin();
+    }
+
+    @Quando("^clico em Login error$")
+    public void clico_em_Login_error() {
+        checkMessage(By.className("invalid_input"), "message");
     }
 
     @Então("^vejo mensagem de login com sucesso$")

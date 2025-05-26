@@ -12,7 +12,7 @@
     @login-sucesso
     Cenário: Login com sucesso
       #Quando preencho login "eduardo.finotti@qazando.com" e senha "123456"
-      E clico em Login
+      E clico em Login error
       #Então vejo mensagem de login com sucesso
 
     @login-invalido
