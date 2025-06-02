@@ -56,7 +56,7 @@ jobs:
 
       - name: Enviar Notificação Slack - Sucesso
         uses: drilonrecica/action-slack-notify@0.0.3
-        if: ${{ sucess() }}
+        if: ${{ success() }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_CHANNEL: devops_resultado-testes
