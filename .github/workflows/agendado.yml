@@ -1,8 +1,8 @@
-name: Testes Regressivos -PR
+name: Testes Regressivos - Agendados
 
 on:
-    pull_request:
-        branches:  [ master ]
+    schedule:
+      - cron: '0 23 * * 1'
 
 jobs:
   RunTest:
@@ -56,14 +56,14 @@ jobs:
 
       - name: Enviar Notificação Slack - Sucesso
         uses: rtCamp/action-slack-notify@v2
-        if: ${{ success() }}
+        if: ${{ sucess() }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK2 }}
           SLACK_CHANNEL: devops_resultado-testes
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://img.icons8.com/?size=512&id=21068&format=png
-          SLACK_MESSAGE: 'Teste do PR executado com sucesso! :white_check_mark:'
-          SLACK_TITLE: 'Teste do PR executado com sucesso! :white_check_mark:'
+          SLACK_MESSAGE: 'Teste AGENDADO executado com sucesso! :white_check_mark:'
+          SLACK_TITLE: 'Teste AGENDADO executado com sucesso! :white_check_mark:'
           SLACK_USERNAME: SUCESSO
 
       - name: Enviar Notificação Slack - Falha
@@ -74,6 +74,6 @@ jobs:
           SLACK_CHANNEL: devops_resultado-testes
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://img.icons8.com/?size=512w&id=12116&format=png
-          SLACK_MESSAGE: 'Erro ao executar testes do PR! :fire:'
-          SLACK_TITLE: 'Erro ao executar testes do PR! :fire:'
+          SLACK_MESSAGE: 'Erro ao executar testes AGENDADOS ! :fire:'
+          SLACK_TITLE: 'Erro ao executar testes AGENDADOS ! :fire:'
           SLACK_USERNAME: ERRO
