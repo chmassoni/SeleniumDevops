@@ -67,7 +67,7 @@ jobs:
           SLACK_USERNAME: SUCESSO
 
       - name: Enviar Notificação Slack - Falha
-        uses: rtCamp/action-slack-notify@v2
+        uses: rtCamp/action-slack-notify@2.3.3
         if: ${{ failure() }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK2 }}
