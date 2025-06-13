@@ -55,10 +55,10 @@ jobs:
           path: "**/formated-report/"
 
       - name: Enviar Notificação Slack - Sucesso
-        uses: drilonrecica/action-slack-notify@0.0.3
+        uses: rtCamp/action-slack-notify@v2
         if: ${{ sucess() }}
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK2 }}
           SLACK_CHANNEL: devops_resultado-testes
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://img.icons8.com/?size=512&id=21068&format=png
@@ -67,10 +67,10 @@ jobs:
           SLACK_USERNAME: SUCESSO
 
       - name: Enviar Notificação Slack - Falha
-        uses: drilonrecica/action-slack-notify@0.0.3
+        uses: rtCamp/action-slack-notify@v2
         if: ${{ failure() }}
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK2 }}
           SLACK_CHANNEL: devops_resultado-testes
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://img.icons8.com/?size=512w&id=12116&format=png
